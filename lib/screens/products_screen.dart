@@ -12,9 +12,12 @@ class ProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<ProductsScreenViewModel>.reactive(
         viewModelBuilder: ()=>ProductsScreenViewModel(),
+        onModelReady: (mdl)=>mdl.init(),
         builder: (builder,viewModel,_)=>Scaffold(
           body: ListView(
+            children: [
 
+            ],
           ),
 
     ));

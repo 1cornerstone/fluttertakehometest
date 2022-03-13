@@ -6,7 +6,7 @@ class FirebaseServices{
 
 
   static FirebaseAuth auth = FirebaseAuth.instance;
-  static FirebaseFirestore store = FirebaseFirestore.instance;
+  static FirebaseFirestore _store = FirebaseFirestore.instance;
 
 
 
@@ -14,7 +14,7 @@ class FirebaseServices{
     return auth.currentUser;
   }
 
-  FirebaseFirestore get firestore => store;
+  FirebaseFirestore get firestore => _store;
 
 
   Future<String?>  signIn(String email,String password)async{
@@ -36,7 +36,6 @@ class FirebaseServices{
       }
     }
   }
-
 
 
 }
