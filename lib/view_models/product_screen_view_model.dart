@@ -17,8 +17,9 @@ class ProductsScreenViewModel extends BaseViewModel{
     FirebaseServices().firestore.collection('items').get().then((value){
       QuerySnapshot<Map<String,dynamic>> snapshot = value;
 
-      snapshot.docs.forEach((element) {
-          Item item = Item.fromJson(Map<String,dynamic>.from(element.data() as Map))
+
+      snapshot.docs.forEach((QueryDocumentSnapshot element) {
+          Item item = Item.fromJson(Map<String,dynamic>.from(element.data() as Map));
 
       });
 

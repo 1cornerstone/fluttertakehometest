@@ -38,6 +38,7 @@ class LoginScreenViewModel extends BaseViewModel{
             FreshFlow.snackBar(value, ToastType.ERROR);
             isLoading = false;
             notifyListeners();
+            return;
           }
 
           NavigationServices().offNamed('products');

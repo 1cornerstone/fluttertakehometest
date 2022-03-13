@@ -26,17 +26,17 @@ class FileServices{
     return path;
   }
 
-  void saveFile(String fileName) async{
+  void saveFile(String fileName,String data) async{
     final pth = await path;
-    File file = File('$pth/text.json');
-    file.writeAsString("hello world");
+    File file = File('$pth/$fileName');
+    file.writeAsString(data);
   }
 
 
   getFile(String fileName)async{
 
     final pth = await path;
-    File file = File('$pth/text.json');
+    File file = File('$pth/$fileName');
     String content = '';
     if (await file.exists()) {
       try{
@@ -45,8 +45,6 @@ class FileServices{
         print(e);
       }
     }
-    print(content);
-
     return content;
 
   }
